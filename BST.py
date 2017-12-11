@@ -201,10 +201,4 @@ class Tree:
         if self.root is not None:
             print("InOrder of BST: ")
             self.root.inorder()
-\problem{}{0}
-\solution
-{
-while loop = while expression do statement\\
-$<stmt> --> while ( <expr> ) <stmt>$\\\\
-Where based on the boolean value of the expression, the statement inside the while loop will continue until the expression is not identified as true anymore.
-}
+
