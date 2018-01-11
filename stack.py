@@ -1,25 +1,35 @@
-class Stack(object):
-    def __init__(self, limit = 10):
-        self.stack = []
-        self.limit = limit
+class Node:
+	def __init__(self, data):
+		self.data = data
+		self.next = None
 
-    def __str__(self):
-        return ' '.join([str(i) for i in self.stack])
+class Stack:
+	def __init__(self):
+		self.top = None
 
-    def push(self, data):
-        if len(self.stack) >= self.limit:
-            print('Stack Overflow')
-        else:
-            self.stack.append(data)
-            
-    def pop(self):
-        if len(self.stack) <= 0:
-            return -1
-        else:
-            return self.stack.pop()
+	def push(self, item):
+		node = Node(item)
+		if self.top is None:
+			self.top = node
+		else:
+			node.next = self.top
+			self.top = node
 
-    def isEmpty(self):
-        return self.stack == []
+	def pop(self):
+        if self.top is None:
+			return None
+		else:
+			temp = self.top.data
+			oth = self.top.next
+			self.top.next = None
+			self.top = oth
+			return temp
 
-    def size(self):
-        return len(self.stack)
+	def getTop(self):
+		return self.top.data
+
+	def printStack(self):
+		currentNode = self.top
+		while currentNode is not None:
+			print(currentNode.data)
+			currentNode = currentNode.next
