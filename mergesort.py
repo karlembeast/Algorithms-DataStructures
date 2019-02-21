@@ -4,7 +4,7 @@ import sys
 
 # function to be called on a list
 def mergesort(unsortedList):
-	mergesortIndex(unsortedList, 0, len(A)-1)
+	mergesortIndex(unsortedList, 0, len(unsortedlist)-1)
 
 def mergesortIndex(unsortedList, first, last):
 	if first < last:
@@ -27,3 +27,14 @@ def merge(unsortedList, first, middle, last):
 		else:
 			unsortedList[k] = right[j]
 			j += 1
+			
+def printList(unsortedlist):
+	for i in range(len(array)):
+		print '%d' % array[i]
+		
+print("Initial Array: \n")
+printlist(unsortedlist)
+
+mergesort(unsortedlist)
+print("Sorted Array: \n")
+printlist(unsortedlist)
